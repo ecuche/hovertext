@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     var hovertexts = document.querySelectorAll('[hovertext]');
     if(hovertexts.length > 0){
-        document.body.insertAdjacentHTML('beforeend', '<div style="display:none;"></div>');
-        var hoverDiv = document.querySelectorAll('div');
-        hoverDiv = hoverDiv[hoverDiv.length - 1];   
+        document.body.insertAdjacentHTML('afterbegin', '<span style="display:none;"></span>');
+        var hoverDiv = document.querySelector('span');
         hovertexts.forEach((hovertext)=>{
             var value = hovertext.getAttribute('hovertext');
             hovertext.addEventListener("mousemove", (e)=>{
